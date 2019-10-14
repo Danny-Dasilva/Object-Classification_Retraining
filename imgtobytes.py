@@ -19,7 +19,4 @@ import binascii
 stream = io.BytesIO(byte_im)
 
 img = Image.open(stream)
-draw = ImageDraw.Draw(img)
-font = ImageFont.truetype("arial.ttf",14)
-draw = ImageDraw.Draw(img)
 img.save("a_test.png")
