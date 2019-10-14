@@ -7,4 +7,5 @@ sock.connect(('localhost', 12345))
 chunk = sock.recv(CHUNK_SIZE)
 while chunk:
     chunk = sock.recv(CHUNK_SIZE)
+    print(chunk)
 sock.close()
