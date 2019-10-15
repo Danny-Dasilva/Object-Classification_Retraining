@@ -10,6 +10,5 @@ while chunk:
     chunk = sock.recv(CHUNK_SIZE)
     print(chunk)
 
-# image = Image.frombytes('RGBA', (128,128), chunk, 'raw')
-# image.show()
+
 sock.close()
