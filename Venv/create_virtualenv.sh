@@ -25,7 +25,7 @@ if grep -q "WORKON_HOME" "$BSHRC";
         echo `VIRTUALENVWRAPPER_PYTHON=${VENVPATHH}` >> $BSHRC
         echo 'source ~/.local/bin/virtualenvwrapper.sh' >> $BSHRC
 fi
-
+source $BSHRC
 venvdir=$(which virtualenvwrapper.sh)
 source $venvdir
 
