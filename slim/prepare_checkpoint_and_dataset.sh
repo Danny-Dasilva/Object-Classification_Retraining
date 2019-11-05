@@ -35,18 +35,24 @@ done
 source "$PWD/constants.sh"
 
 echo "PREPARING checkpoint ..."
+rm -rf "${LEARN_DIR}"
+rm -rf "${CKPT_DIR}"
 mkdir -p "${LEARN_DIR}"
 mkdir "${CKPT_DIR}"
 cd "${CKPT_DIR}"
 ckpt_link="${ckpt_link_map[${network_type}]}"
 ckpt_name="${ckpt_name_map[${network_type}]}"
+rm -rf ${ckpt_name}
 wget -O "${ckpt_name}.tgz" "${ckpt_link}"
 tar zxvf "${ckpt_name}.tgz"
-
+rm -rf "${ckpt_name}.tgz"
 echo "PREPARING dataset ..."
+rm -rf "${DATASET_DIR}"
 mkdir "${DATASET_DIR}"
+
+
 cd "${SLIM_DIR}"
-python download_and_convert_data.py \
+python3 d_and_convert.py \
   --dataset_name=flowers \
   --dataset_dir="${DATASET_DIR}"
 
