@@ -121,13 +121,13 @@ def _convert_dataset(split_name, filenames, class_names_to_ids, dataset_dir):
   with tf.Graph().as_default():
     image_reader = ImageReader()
 
-    with tf.Session('') as sess:
+    with tf.compat.v1.Session('') as sess:
 
       for shard_id in range(_NUM_SHARDS):
         output_filename = _get_dataset_filename(
             dataset_dir, split_name, shard_id)
 
-        with tf.python_io.TFRecordWriter(output_filename) as tfrecord_writer:
+        with tf.compat.v1.python_io.TFRecordWriter(output_filename) as tfrecord_writer:
           start_ndx = shard_id * num_per_shard
           end_ndx = min((shard_id+1) * num_per_shard, len(filenames))
           for i in range(start_ndx, end_ndx):
@@ -158,10 +158,10 @@ def _clean_up_temporary_files(dataset_dir):
   """
   filename = _DATA_URL.split('/')[-1]
   filepath = os.path.join(dataset_dir, filename)
-  tf.io.gfile.Remove(filepath)
+  tf.io.gfile.remove(filepath)
 
   tmp_dir = os.path.join(dataset_dir, 'flower_photos')
-  tf.io.gfile.DeleteRecursively(tmp_dir)
+  tf.io.gfile.rmtree(tmp_dir)
 
 
 def _dataset_exists(dataset_dir):
