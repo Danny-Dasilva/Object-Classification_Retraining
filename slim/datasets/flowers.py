@@ -27,7 +27,7 @@ import tensorflow as tf
 
 from datasets import dataset_utils
 
-# slim = tf.contrib.slim
+slim = tf.contrib.slim
 
 _FILE_PATTERN = 'flowers_%s_*.tfrecord'
 
@@ -77,18 +77,18 @@ def get_split(split_name, dataset_dir, file_pattern=None, reader=None):
   }
 
   items_to_handlers = {
-      'image': tfdv.TFExampleDecoder.Image(),
-      'label': tfdv.TFExampleDecoder.Tensor('image/class/label'),
+      'image': slim.tfexample_decoder.Image(),
+      'label': slim.tfexample_decoder.Tensor('image/class/label'),
   }
 
-  decoder = tfdv.TFExampleDecoder.TFExampleDecoder(
+  decoder = slim.tfexample_decoder.TFExampleDecoder(
       keys_to_features, items_to_handlers)
 
   labels_to_names = None
   if dataset_utils.has_labels(dataset_dir):
     labels_to_names = dataset_utils.read_label_file(dataset_dir)
 
-  return tf.data.Dataset(
+  return slim.dataset.Dataset(
       data_sources=file_pattern,
       reader=reader,
       decoder=decoder,

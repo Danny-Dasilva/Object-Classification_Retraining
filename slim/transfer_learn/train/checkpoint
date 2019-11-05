@@ -1,0 +1,2 @@
+model_checkpoint_path: "/home/tech-garage/Documents/SortAi/Object-Classification_Retraining/slim/transfer_learn/train/model.ckpt-0"
+all_model_checkpoint_paths: "/home/tech-garage/Documents/SortAi/Object-Classification_Retraining/slim/transfer_learn/train/model.ckpt-0"
