@@ -1,2 +1,6 @@
-model_checkpoint_path: "/home/tech-garage/Documents/SortAi/Object-Classification_Retraining/slim/transfer_learn/train/model.ckpt-0"
-all_model_checkpoint_paths: "/home/tech-garage/Documents/SortAi/Object-Classification_Retraining/slim/transfer_learn/train/model.ckpt-0"
+model_checkpoint_path: "/home/danny/Documents/Object-Classification_Retraining/slim/transfer_learn/train/model.ckpt-300"
+all_model_checkpoint_paths: "/home/danny/Documents/Object-Classification_Retraining/slim/transfer_learn/train/model.ckpt-190"
+all_model_checkpoint_paths: "/home/danny/Documents/Object-Classification_Retraining/slim/transfer_learn/train/model.ckpt-219"
+all_model_checkpoint_paths: "/home/danny/Documents/Object-Classification_Retraining/slim/transfer_learn/train/model.ckpt-247"
+all_model_checkpoint_paths: "/home/danny/Documents/Object-Classification_Retraining/slim/transfer_learn/train/model.ckpt-276"
+all_model_checkpoint_paths: "/home/danny/Documents/Object-Classification_Retraining/slim/transfer_learn/train/model.ckpt-300"

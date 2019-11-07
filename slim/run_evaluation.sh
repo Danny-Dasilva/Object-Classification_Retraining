@@ -35,7 +35,7 @@ done
 source "$PWD/constants.sh"
 
 image_size="${image_size_map[${network_type}]}"
-python eval_image_classifier.py \
+python3 eval_image_classifier.py \
   --checkpoint_path="${TRAIN_DIR}" \
   --eval_dir="${TRAIN_DIR}" \
   --dataset_name=flowers \

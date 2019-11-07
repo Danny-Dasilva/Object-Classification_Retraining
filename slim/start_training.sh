@@ -23,7 +23,7 @@ END_OF_USAGE
 
 network_type="mobilenet_v1"
 train_whole_model="false"
-train_steps=300
+train_steps=500
 quantize_delay=100
 while [[ $# -gt 0 ]]; do
   case "$1" in
@@ -64,7 +64,7 @@ scopes="${scopes_map[${network_type}]}"
 
 if [[ "${train_whole_model}" == "true" ]]; then
   echo "TRAINING all layers ..."
-  python train_image_classifier.py \
+  python3 train_image_classifier.py \
     --train_dir="${TRAIN_DIR}" \
     --dataset_name=flowers \
     --dataset_split_name=train \
@@ -90,7 +90,7 @@ else
   # to specify the trainable scopes trainable_scopes, to demonstrate this, we
   # will limit the trainable scope to Fully-connected layers. You can definitely
   # add other layers by tweaking this flag.
-  python train_image_classifier.py \
+  python3 train_image_classifier.py \
     --train_dir="${TRAIN_DIR}" \
     --dataset_name=flowers \
     --dataset_split_name=train \
